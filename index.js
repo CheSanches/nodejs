@@ -1,3 +1,4 @@
+require("dotenv").config();
 const TelegramBot = require("node-telegram-bot-api");
 const fs = require("fs");
 const csv = require("csv-parser");
@@ -81,8 +82,7 @@ bot.on("message", (msg) => {
                 const description = `<blockquote>${escapeHtml(row.Описание).replace(/\n/g, "<br>")}</blockquote>`;
 
                 const response =
-                    `<b>${escapeHtml(row.MCC)}</b>: <i>${escapeHtml(row.Название)}</i>\n` +
-                    `${description}`; // Используем HTML разметку
+                    `<b>${escapeHtml(row.MCC)}</b>: <i>${escapeHtml(row.Название)}</i>\n` + `${description}`; // Используем HTML разметку
 
                 // Отправляем каждое совпадение как отдельное сообщение
                 sendMessageInChunks(chatId, response);
