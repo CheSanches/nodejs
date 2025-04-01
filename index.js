@@ -79,7 +79,7 @@ bot.on("message", (msg) => {
         if (matches.length > 0) {
             matches.forEach((row) => {
                 // Экранируем описание и заключаем его в <blockquote>
-                const description = `<blockquote>${escapeHtml(row.Описание).replace(/\n/g, "<br>")}</blockquote>`;
+                const description = `<blockquote>${escapeHtml(row.Описание).replace(/\n/g, "\n\n")}</blockquote>`;
 
                 const response =
                     `<b>${escapeHtml(row.MCC)}</b>: <i>${escapeHtml(row.Название)}</i>\n` + `${description}`; // Используем HTML разметку
