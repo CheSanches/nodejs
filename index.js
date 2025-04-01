@@ -4,7 +4,7 @@ const fs = require("fs");
 const csv = require("csv-parser");
 
 // Замените 'YOUR_TOKEN' на токен вашего бота
-const token = process.env.TELEGRAM_TOKEN;
+const token = process.env.BOT_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
 let data = [];
